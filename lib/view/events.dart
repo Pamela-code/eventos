@@ -1,3 +1,5 @@
+import 'package:eventos/theme/colors.dart';
+import 'package:eventos/view/event_details.dart';
 import 'package:flutter/material.dart';
 
 class Events extends StatefulWidget {
@@ -12,7 +14,7 @@ class _EventsState extends State<Events> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: const Color(0xfff2f2f2),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -38,8 +40,21 @@ class _EventsState extends State<Events> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
-                            Text('Olá,'),
-                            Text('Ayana'),
+                            Text(
+                              'Olá,',
+                              style: TextStyle(
+                                color: Color(0xff2d2d2d),
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              'Ayana',
+                              style: TextStyle(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 24,
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -49,7 +64,7 @@ class _EventsState extends State<Events> {
                     ),
                     Container(
                       decoration: const BoxDecoration(
-                        color: Colors.black12,
+                        color: Color(0xffe8e8e8),
                         borderRadius: BorderRadius.all(
                           Radius.circular(8),
                         ),
@@ -61,8 +76,17 @@ class _EventsState extends State<Events> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
-                            Text('Busque seu evento'),
-                            Icon(Icons.search)
+                            Text(
+                              'Busque seu evento',
+                              style: TextStyle(
+                                color: Color(0xff8c8c8c),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Icon(
+                              Icons.search,
+                              color: Color(0xff8c8c8c),
+                            )
                           ],
                         ),
                       ),
@@ -70,7 +94,14 @@ class _EventsState extends State<Events> {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text('Eventos'),
+                    const Text(
+                      'Eventos',
+                      style: TextStyle(
+                        color: Color(0xff2d2d2d),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                      ),
+                    ),
                     Expanded(
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -79,9 +110,9 @@ class _EventsState extends State<Events> {
                           children: [
                             Container(
                               decoration: const BoxDecoration(
-                                color: Colors.white,
+                                color: Color(0xffffffff),
                                 borderRadius: BorderRadius.all(
-                                  Radius.circular(30),
+                                  Radius.circular(16),
                                 ),
                               ),
                               child: Column(
@@ -90,49 +121,69 @@ class _EventsState extends State<Events> {
                                 children: [
                                   ClipRRect(
                                     borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(30),
-                                      topRight: Radius.circular(30),
+                                      topLeft: Radius.circular(16),
+                                      topRight: Radius.circular(16),
                                     ),
                                     child: Image.network(
                                       'https://yt3.ggpht.com/ytc/AKedOLSZdkOGn2-vktrF6tbGmERQhY6lQN9BmF40XaPaHQ=s900-c-k-c0x00ffffff-no-rj',
-                                      fit: BoxFit.fill,
                                     ),
                                   ),
-                                  Row(
-                                    children: const [
-                                      Text('Evento: '),
-                                      Text('Nossa História - Sandy & Junior')
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          Text('Local: '),
-                                          Text('Vegas pub - P10')
-                                        ],
-                                      ),
-                                      Row(
-                                        children: const [
-                                          Text('Data:'),
-                                          Text('13 de Nov'),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {},
-                                    child: const Text('Mais informações'),
-                                    style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                  Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          children: const [
+                                            Text('Evento: '),
+                                            Text(
+                                                'Nossa História - Sandy & Junior')
+                                          ],
                                         ),
-                                      ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: const [
+                                                Text('Local: '),
+                                                Text('Vegas pub - P10')
+                                              ],
+                                            ),
+                                            Row(
+                                              children: const [
+                                                Text('Data:'),
+                                                Text('13 de Nov'),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: double.infinity,
+                                          child: ElevatedButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const EventDetails(),
+                                                ),
+                                              );
+                                            },
+                                            child:
+                                                const Text('Mais informações'),
+                                            style: ButtonStyle(
+                                              shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],

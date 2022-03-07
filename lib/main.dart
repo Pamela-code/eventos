@@ -1,3 +1,4 @@
+import 'package:eventos/theme/colors.dart';
 import 'package:eventos/view/events.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: kPrimaryColor,
       ),
       home: const Events(),
     );
