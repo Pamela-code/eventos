@@ -44,28 +44,65 @@ class _EventDetailsState extends State<EventDetails> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: constraints.maxHeight * .55,
+                height: constraints.maxHeight * .6,
                 width: constraints.maxWidth,
-                decoration: const BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
+                decoration: BoxDecoration(
+                  color: const Color(0xffffffff),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text('Nossa História'),
+                      const Text(
+                        'Nossa História',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 22,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       const Text('2001 ingressos disponíveis'),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       SizedBox(
+                        height: 45,
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: const Text('Reservar'),
+                          child: const Text(
+                            'Reservar',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(9.0),
+                              ),
+                            ),
+                          ),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 15,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,26 +110,62 @@ class _EventDetailsState extends State<EventDetails> {
                           Row(
                             children: const [
                               Icon(Icons.alarm),
-                              Text('data'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('Qua. 07 Jun. 2020       16h - 00:30'),
                             ],
                           ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
-                              Icon(Icons.gps_fixed_outlined),
-                              Text('data'),
+                              Icon(Icons.location_on),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('Arena da Amazônia'),
                             ],
+                          ),
+                          const Text(
+                              'Av. Constantino Nery, 5001 - Flores, Manaus - AM'),
+                          const SizedBox(
+                            height: 10,
                           ),
                           Row(
                             children: const [
                               Icon(Icons.flag),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('Evento Presencial'),
                             ],
                           ),
-                          const Text('Descrição do Evento'),
-                          const Text('data'),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Text(
+                            'Descrição do Evento',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Text(
+                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus est enim, eget convallis dui facilisis nec. Pellentesque nec odio purus. Vestibulum ut lacus pellentesque, condimentum nunc id, tincidunt metus.'),
                           TextButton(
                             onPressed: () {},
-                            child: Text('VER DESCRIÇÃO'),
+                            child: const Text(
+                              'VER DESCRIÇÃO',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ],
                       ),

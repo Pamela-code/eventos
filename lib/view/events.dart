@@ -21,9 +21,9 @@ class _EventsState extends State<Events> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(
-                  left: 32,
-                  right: 32,
-                  top: 70,
+                  left: 18,
+                  right: 18,
+                  top: 65,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,6 +31,7 @@ class _EventsState extends State<Events> {
                     Row(
                       children: [
                         const CircleAvatar(
+                          radius: 30,
                           backgroundImage: NetworkImage(
                               'https://blog.unyleya.edu.br/wp-content/uploads/2017/12/saiba-como-a-educacao-ajuda-voce-a-ser-uma-pessoa-melhor.jpeg'),
                         ),
@@ -51,7 +52,7 @@ class _EventsState extends State<Events> {
                               'Ayana',
                               style: TextStyle(
                                 color: kPrimaryColor,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w900,
                                 fontSize: 24,
                               ),
                             ),
@@ -60,7 +61,7 @@ class _EventsState extends State<Events> {
                       ],
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     Container(
                       decoration: const BoxDecoration(
@@ -70,7 +71,7 @@ class _EventsState extends State<Events> {
                         ),
                       ),
                       width: constraints.maxWidth,
-                      height: 40,
+                      height: 45,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -80,7 +81,7 @@ class _EventsState extends State<Events> {
                               'Busque seu evento',
                               style: TextStyle(
                                 color: Color(0xff8c8c8c),
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                             Icon(
@@ -92,7 +93,7 @@ class _EventsState extends State<Events> {
                       ),
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     const Text(
                       'Eventos',
@@ -104,6 +105,7 @@ class _EventsState extends State<Events> {
                     ),
                     Expanded(
                       child: ListView.builder(
+                        padding: const EdgeInsets.only(top: 10),
                         shrinkWrap: true,
                         itemCount: 5,
                         itemBuilder: (context, index) => Column(
@@ -129,15 +131,23 @@ class _EventsState extends State<Events> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(16.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Column(
                                       children: [
                                         Row(
                                           children: const [
-                                            Text('Evento: '),
                                             Text(
-                                                'Nossa História - Sandy & Junior')
+                                              'Evento: ',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              'Nossa História - Sandy & Junior',
+                                            )
                                           ],
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
                                         ),
                                         Row(
                                           mainAxisAlignment:
@@ -145,19 +155,33 @@ class _EventsState extends State<Events> {
                                           children: [
                                             Row(
                                               children: const [
-                                                Text('Local: '),
+                                                Text(
+                                                  'Local: ',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
                                                 Text('Vegas pub - P10')
                                               ],
                                             ),
                                             Row(
                                               children: const [
-                                                Text('Data:'),
+                                                Text(
+                                                  'Data:',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
                                                 Text('13 de Nov'),
                                               ],
                                             ),
                                           ],
                                         ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
                                         SizedBox(
+                                          height: 45,
                                           width: double.infinity,
                                           child: ElevatedButton(
                                             onPressed: () {
@@ -169,15 +193,20 @@ class _EventsState extends State<Events> {
                                                 ),
                                               );
                                             },
-                                            child:
-                                                const Text('Mais informações'),
+                                            child: const Text(
+                                              'Mais informações',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                             style: ButtonStyle(
                                               shape: MaterialStateProperty.all<
                                                   RoundedRectangleBorder>(
                                                 RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          8.0),
+                                                          9.0),
                                                 ),
                                               ),
                                             ),
@@ -190,7 +219,7 @@ class _EventsState extends State<Events> {
                               ),
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 10,
                             ),
                           ],
                         ),
@@ -201,18 +230,25 @@ class _EventsState extends State<Events> {
               ),
             ),
             BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: Colors.white,
+              backgroundColor: kPrimaryColor,
               items: const [
                 BottomNavigationBarItem(
-                  label: '000',
-                  icon: Icon(Icons.person),
+                  label: 'Início',
+                  icon: Icon(Icons.home),
                 ),
                 BottomNavigationBarItem(
-                  label: '000',
-                  icon: Icon(Icons.shopping_basket),
+                  label: 'Eventos',
+                  icon: Icon(Icons.alarm),
                 ),
                 BottomNavigationBarItem(
-                  label: '000',
-                  icon: Icon(Icons.favorite),
+                  label: 'Em breve',
+                  icon: Icon(Icons.notifications_outlined),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Conta',
+                  icon: Icon(Icons.person_outline),
                 )
               ],
             ),
