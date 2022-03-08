@@ -104,70 +104,74 @@ class _EventDetailsState extends State<EventDetails> {
                       const SizedBox(
                         height: 15,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: const [
-                              Icon(Icons.alarm),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('Qua. 07 Jun. 2020       16h - 00:30'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Icon(Icons.location_on),
-                              SizedBox(
-                                width: 10,
+                            children: [
+                              Row(
+                                children: const [
+                                  Icon(Icons.alarm),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text('Qua. 07 Jun. 2020       16h - 00:30'),
+                                ],
                               ),
-                              Text('Arena da Amazônia'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Icon(Icons.location_on),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text('Arena da Amazônia'),
+                                ],
+                              ),
+                              const Text(
+                                  'Av. Constantino Nery, 5001 - Flores, Manaus - AM'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: const [
+                                  Icon(Icons.flag),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text('Evento Presencial'),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              const Text(
+                                'Descrição do Evento',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              const Text(
+                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus est enim, eget convallis dui facilisis nec. Pellentesque nec odio purus. Vestibulum ut lacus pellentesque, condimentum nunc id, tincidunt metus.'),
+                              TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  'VER DESCRIÇÃO',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
-                          const Text(
-                              'Av. Constantino Nery, 5001 - Flores, Manaus - AM'),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: const [
-                              Icon(Icons.flag),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('Evento Presencial'),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Text(
-                            'Descrição do Evento',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus est enim, eget convallis dui facilisis nec. Pellentesque nec odio purus. Vestibulum ut lacus pellentesque, condimentum nunc id, tincidunt metus.'),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'VER DESCRIÇÃO',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),

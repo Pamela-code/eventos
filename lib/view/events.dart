@@ -133,11 +133,15 @@ class _EventsState extends State<Events> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            Text(
-              'Busque seu evento',
-              style: TextStyle(
-                color: Color(0xff8c8c8c),
-                fontWeight: FontWeight.w600,
+            Expanded(
+              child: TextField(
+                decoration: InputDecoration.collapsed(
+                  hintText: 'Busque seu evento',
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff8c8c8c),
+                  ),
+                ),
               ),
             ),
             Icon(
